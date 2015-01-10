@@ -1,7 +1,7 @@
 // Class for Drama Movies 
 public class DramaMovie extends Movie implements java.io.Serializable
 {
-	// Constants
+	//  Constants
 	private static final double RENT_AMOUNT_DEFAULT_DRAMA = 2;
 
 	// Constructor
