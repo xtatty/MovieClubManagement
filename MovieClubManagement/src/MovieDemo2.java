@@ -131,7 +131,7 @@ public class MovieDemo2 {
 		rental.add(rental2);
 		rental.add(rental3);*/
 
-		System.out.println("The total late fees is " + lateFeesOwed(rentals));
+		System.out.println("\n The total late fees is " + lateFeesOwed(rentals));
 	}
 
 	private static double lateFeesOwed(List<Rental> rental) {
