@@ -1,6 +1,6 @@
 // General Movie Class
 
-public class Movie
+public class Movie implements java.io.Serializable
 {
 	// Movie attributes
 	private Integer movieID;

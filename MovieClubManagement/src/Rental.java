@@ -1,6 +1,6 @@
 // Rental class that will have information about all the rentals.
 
-public class Rental {
+public class Rental implements java.io.Serializable {
 
 	// Rental Variables
 	private Movie movieDetails;
