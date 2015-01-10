@@ -2,7 +2,7 @@
 
 public class Rental implements java.io.Serializable {
 
-	// Rental Variables
+	//  Rental Variables
 	private Movie movieDetails;
 	public int customerID;
 	private int noOfDaysLate;
