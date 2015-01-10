@@ -2,7 +2,7 @@
 
 public class Movie implements java.io.Serializable
 {
-	// Movie attributes
+	//  Movie attributes
 	private Integer movieID;
 	private String movieTitle;
 	private String mpaaRating;
