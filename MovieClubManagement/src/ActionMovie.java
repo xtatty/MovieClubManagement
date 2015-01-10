@@ -1,7 +1,7 @@
 // Class for Action Movies
 public class ActionMovie extends Movie implements java.io.Serializable
 {
-	// Constants
+	//   Constants
 	private static final double RENT_AMOUNT_DEFAULT_ACTION = 3;
 
 	// Constructor
