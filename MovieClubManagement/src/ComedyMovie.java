@@ -1,7 +1,7 @@
 // Class for Comedy Movies 
 public class ComedyMovie extends Movie implements java.io.Serializable
 {
-	// Constants
+	//  Constants
 	private static final double RENT_AMOUNT_DEFAULT_COMEDY = 2.5;
 
 	// Constructor
