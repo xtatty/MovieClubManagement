@@ -22,7 +22,7 @@ public class MovieDemo2 {
 
         try
         {
-            FileInputStream fis = new FileInputStream("C:/temp1/movies.ser");
+            FileInputStream fis = new FileInputStream("C:/Users/Public/movies.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             movies = (ArrayList) ois.readObject();
             ois.close();
@@ -44,7 +44,7 @@ public class MovieDemo2 {
         
         try
         {
-            FileInputStream fis = new FileInputStream("C:/temp1/rentals.ser");
+            FileInputStream fis = new FileInputStream("C:/Users/Public/rentals.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             rentals = (ArrayList) ois.readObject();
             ois.close();
