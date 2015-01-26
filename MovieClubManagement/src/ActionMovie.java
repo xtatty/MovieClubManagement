@@ -1,5 +1,7 @@
+import java.io.Serializable;
+
 // Class for Action Movies
-public class ActionMovie extends Movie
+public class ActionMovie extends Movie implements Serializable
 {
 	//   Constants
 	private static final double RENT_AMOUNT_DEFAULT_ACTION = 3;

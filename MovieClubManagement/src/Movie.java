@@ -1,6 +1,8 @@
+import java.io.Serializable;
+
 // General Movie Class
 
-public class Movie
+public class Movie implements Serializable
 {
 	//  Movie attributes
 	private Integer movieID;
