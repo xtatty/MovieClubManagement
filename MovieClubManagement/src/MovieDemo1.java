@@ -75,7 +75,7 @@ public class MovieDemo1 {
 		
 		
 		try{
-            FileOutputStream fileOut= new FileOutputStream("C:/temp1/movies.ser");
+            FileOutputStream fileOut= new FileOutputStream("C:/Users/Public/movies.ser");
             ObjectOutputStream out= new ObjectOutputStream(fileOut);
             out.writeObject(movies);
             out.close();
@@ -86,7 +86,7 @@ public class MovieDemo1 {
 		
 		
 		try{
-            FileOutputStream fileOut= new FileOutputStream("C:/temp1/rentals.ser");
+            FileOutputStream fileOut= new FileOutputStream("C:/Users/Public/rentals.ser");
             ObjectOutputStream out= new ObjectOutputStream(fileOut);
             out.writeObject(rentals);
             out.close();
