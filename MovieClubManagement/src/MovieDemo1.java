@@ -65,9 +65,9 @@ public class MovieDemo1 {
 		ArrayList<Rental> rentals; 
         rentals = new ArrayList<Rental>();		
 		
-		Rental rental1 = new Rental(mov1, 123, 3);
-		Rental rental2 = new Rental(mov2, 456, 5);
-		Rental rental3 = new Rental(mov3, 123, 7);
+		Rental rental1 = new Rental(mov1, 3);
+		Rental rental2 = new Rental(mov2, 5);
+		Rental rental3 = new Rental(mov3, 7);
 		
 		rentals.add(rental1);
 		rentals.add(rental2);
@@ -165,16 +165,7 @@ public class MovieDemo1 {
 		rental.add(rental2);
 		rental.add(rental3);*/
 
-		System.out.println("The total late fees is " + lateFeesOwed(rentals));
+		// System.out.println("The total late fees is " + lateFeesOwed(rentals));
 	}
-
-	private static double lateFeesOwed(List<Rental> rental) {
-		Iterator<Rental> itr = rental.iterator();
-		double lateFeeTotal = 0;
-		while (itr.hasNext()) {
-			Rental rentalInstance = (Rental) itr.next();
-			lateFeeTotal += rentalInstance.calcRentAmount();
-		}
-		return lateFeeTotal;
-	}
+	
 }

@@ -13,8 +13,13 @@ public class ComedyMovie extends Movie implements Serializable
 	}
 
 	// Method for computing the Rent Amount
-	public void calcRentAmount(int daysLate)
+	public double calcRentAmount(int daysLate)
 	{
-		rentAmountTotal = RENT_AMOUNT_DEFAULT_COMEDY * daysLate;
+		if (daysLate <= 2)
+			rentAmountTotal = RENT_AMOUNT_DEFAULT_COMEDY * daysLate;
+		else if (daysLate > 2)
+			rentAmountTotal = RENT_AMOUNT_DEFAULT_COMEDY * daysLate + (daysLate * 1);
+		
+		return rentAmountTotal;
 	}
 }

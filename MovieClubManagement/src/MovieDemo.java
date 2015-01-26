@@ -16,9 +16,9 @@ public class MovieDemo {
 		DramaMovie mov3 = new DramaMovie(3, "The Yellow Handkerchief", "PG-13");
 		
 		// Creating Rentals
-		Rental rental1 = new Rental(mov1, 123, 3);
-		Rental rental2 = new Rental(mov2, 456, 5);
-		Rental rental3 = new Rental(mov3, 123, 7);
+		Rental rental1 = new Rental(mov1, 3);
+		Rental rental2 = new Rental(mov2, 5);
+		Rental rental3 = new Rental(mov3, 7);
 
 		// Verify ID Mutator Method
 		System.out.println("Verifying ID Mutator Method:");
@@ -60,7 +60,7 @@ public class MovieDemo {
 		// Calculate Rent Amount 
 		System.out.println("Calculate Rent Amount:");
 
-		mov1.calcRentAmount(3);
+		mov1.calcRentAmount(2);
 		System.out.print("The movie with ID #" + mov1.getMovieID()
 				+ " has a rent charge of $");
 		System.out.printf("%6.2f", mov1.getRentAmountTotal());
@@ -78,13 +78,16 @@ public class MovieDemo {
 		System.out.printf("%6.2f", mov3.getRentAmountTotal());
 		System.out.println(" !");
 
-		System.out.println("Calling calculate rent amount from Rental Class "
-				+ rental1.calcRentAmount());
-		System.out.println("Calling calculate rent amount from Rental Class "
-				+ rental2.calcRentAmount());
-		System.out.println("Calling calculate rent amount from Rental Class "
-				+ rental3.calcRentAmount());
-
+		
+		/* 
+		 * System.out.println("Calling calculate rent amount from Rental Class "
+		 *		+ rental1.calcRentAmount());
+		 *  System.out.println("Calling calculate rent amount from Rental Class "
+		 *		+ rental2.calcRentAmount());
+		 *  System.out.println("Calling calculate rent amount from Rental Class "
+		 *		+ rental3.calcRentAmount());
+		 
+		
 		List<Rental> rental = new ArrayList<Rental>();
 		rental.add(rental1);
 		rental.add(rental2);
@@ -101,5 +104,7 @@ public class MovieDemo {
 			rentAmountTotal += rentalInstance.calcRentAmount();
 		}
 		return rentAmountTotal;
+	}
+	*/
 	}
 }

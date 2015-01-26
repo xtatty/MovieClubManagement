@@ -1,28 +1,44 @@
 import java.io.Serializable;
 
-// Rental class that will have information about all the rentals.
+// Rental class that will have information about the rentals.
 public class Rental implements Serializable {
 
 	// Rental Variables
-	private Movie movieDetails;
-	public int customerId;
+	private Movie movie;
 	private int noOfDaysLate;
-
+	
+	
 	// Constructor
-	public Rental(Movie movDetails, int id, int daysLate) {
-		this.movieDetails = movDetails;
-		this.customerId = id;
+	public Rental(Movie movDetails, int daysLate) {
+		this.movie = movDetails;
 		this.noOfDaysLate = daysLate;
 	}
 
-	public double calcRentAmount() {
-	 	if (movieDetails instanceof ActionMovie) {
-	 		return 3 * noOfDaysLate;
-	 	} else if (movieDetails instanceof ComedyMovie) {
-	 		return 2.5 * noOfDaysLate;
-	 	} else {
-	 		return 2 * noOfDaysLate;
-	 	}
-	 }
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public int getNoOfDaysLate() {
+		return noOfDaysLate;
+	}
+
+	
+	public double getRentAmount() {
+		return movie.calcRentAmount(noOfDaysLate);
+	}
+	
+	
+	
+	/* public double calcRentAmount() {
+	 *	 if (movieDetails instanceof ActionMovie) {
+	 *		 return 3 * noOfDaysLate;
+	 *	 } else if (movieDetails instanceof ComedyMovie) {
+	 *		return 2.5 * noOfDaysLate;
+	 *	 } else {
+	 *	 	return 2 * noOfDaysLate;
+	 *	 }
+	 * }
+	 */
+	
 	
 }

@@ -131,16 +131,8 @@ public class MovieDemo2 {
 		rental.add(rental2);
 		rental.add(rental3);*/
 
-		System.out.println("\n The total late fees is " + lateFeesOwed(rentals));
+		
 	}
 
-	private static double lateFeesOwed(List<Rental> rental) {
-		Iterator<Rental> itr = rental.iterator();
-		double lateFeeTotal = 0;
-		while (itr.hasNext()) {
-			Rental rentalInstance = (Rental) itr.next();
-			lateFeeTotal += rentalInstance.calcRentAmount();
-		}
-		return lateFeeTotal;
-	}
+	
 }
