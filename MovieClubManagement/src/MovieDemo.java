@@ -1,8 +1,6 @@
 //  Movie Demo
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Date;
 
 public class MovieDemo {
 	public static void main(String[] args) 
@@ -19,45 +17,29 @@ public class MovieDemo {
 		Rental rental1 = new Rental(mov1, 3);
 		Rental rental2 = new Rental(mov2, 5);
 		Rental rental3 = new Rental(mov3, 7);
+		
+		// Testing the NewRental Class
+		/* καταχώρηση ενοικίασης μαζί με την ημερομηνία και υπολογισμός 
+		 * των ημερών της ενοικίασης για να βγει η χρέωση
+		 */
+		@SuppressWarnings("deprecation")
+		Date pastDate = new Date(2014, 06, 20);
+		@SuppressWarnings("deprecation")
+		Date today = new Date(2014, 06, 24);
+		
+		NewRental newRentalTest = new NewRental(mov1, pastDate);		
+		
+		int days = newRentalTest.calcRentalDays(pastDate, today);
+		
+		System.out.println("\nTesting the NewRental Class" + "\nRental Days: " + days + "\n");
+		
+		newRentalTest.getRentAmount();
+		
+		System.out.println("\nRented Movie: " + newRentalTest.getMovie().getMovieTitle());
+		System.out.println("\nRent Amount for the Movie: " + newRentalTest.getRentAmount());
 
-		// Verify ID Mutator Method
-		System.out.println("Verifying ID Mutator Method:");
-		System.out.println("Original ID was : " + mov1.getMovieID());
-		mov1.setMovieID(2);
-		System.out.println("Modified ID is : " + mov1.getMovieID());
-		System.out.println();
-
-		// Verify Equals Method
-		System.out.println("Verifying Equals Method:");
-		Integer v1, v2;
-		v1 = mov1.getMovieID();
-		v2 = mov2.getMovieID();
-		System.out.println(mov1.getMovieID() + " equals " + mov2.getMovieID()
-				+ "? " + v1.equals(v2));
-		System.out.println();
-		mov1.setMovieID(1); // Change it back
-		System.out.println("Verifying Equals Method:");
-		v1 = mov1.getMovieID();
-		v2 = mov2.getMovieID();
-		System.out.println(mov1.getMovieID() + " equals " + mov2.getMovieID()
-				+ "? " + v1.equals(v2));
-		System.out.println();
-
-		// Verifying Title Mutator Method
-		System.out.println("Verifying Title Mutator Method:");
-		System.out.println("Original Title: " + mov3.getMovieTitle());
-		mov3.setMovieTitle("The Yellow Handkerchief (2011)");
-		System.out.println("Modified Title: " + mov3.getMovieTitle());
-		System.out.println();
-
-		// Verify Rating Mutator
-		System.out.println("Verify Rating Mutator Method:");
-		System.out.println("Original Rating: " + mov2.getMpaaRating());
-		mov2.setMpaaRating("NR");
-		System.out.println("Modified Rating: " + mov2.getMpaaRating());
-		System.out.println();
-
-		// Calculate Rent Amount 
+		
+	    // Calculate Rent Amount 
 		System.out.println("Calculate Rent Amount:");
 
 		mov1.calcRentAmount(2);
@@ -80,6 +62,46 @@ public class MovieDemo {
 
 		
 		/* 
+		 * 
+		 * 	// Verify ID Mutator Method
+		 *	System.out.println("Verifying ID Mutator Method:");
+		 *	System.out.println("Original ID was : " + mov1.getMovieID());
+		 *	mov1.setMovieID(2);
+		 *	System.out.println("Modified ID is : " + mov1.getMovieID());
+		 *	System.out.println();
+		 *
+		 *	// Verify Equals Method
+		 *	System.out.println("Verifying Equals Method:");
+		 *	Integer v1, v2;
+		 *	v1 = mov1.getMovieID();
+		 *	v2 = mov2.getMovieID();
+		 *	System.out.println(mov1.getMovieID() + " equals " + mov2.getMovieID()
+		 *			+ "? " + v1.equals(v2));
+		 *	System.out.println();
+		 *	mov1.setMovieID(1); // Change it back
+		 *	System.out.println("Verifying Equals Method:");
+		 *	v1 = mov1.getMovieID();
+		 *	v2 = mov2.getMovieID();
+		 *	System.out.println(mov1.getMovieID() + " equals " + mov2.getMovieID()
+		 *			+ "? " + v1.equals(v2));
+		 *	System.out.println();
+		 *
+		 *	// Verifying Title Mutator Method
+		 *	System.out.println("Verifying Title Mutator Method:");
+		 *	System.out.println("Original Title: " + mov3.getMovieTitle());
+		 *	mov3.setMovieTitle("The Yellow Handkerchief (2011)");
+		 *	System.out.println("Modified Title: " + mov3.getMovieTitle());
+		 *	System.out.println();
+		 *
+		 *	// Verify Rating Mutator
+		 *	System.out.println("Verify Rating Mutator Method:");
+		 *	System.out.println("Original Rating: " + mov2.getMpaaRating());
+		 *	mov2.setMpaaRating("NR");
+		 *	System.out.println("Modified Rating: " + mov2.getMpaaRating());
+		 *	System.out.println();
+		 *
+		 *
+		 *
 		 * System.out.println("Calling calculate rent amount from Rental Class "
 		 *		+ rental1.calcRentAmount());
 		 *  System.out.println("Calling calculate rent amount from Rental Class "
@@ -88,23 +110,27 @@ public class MovieDemo {
 		 *		+ rental3.calcRentAmount());
 		 
 		
-		List<Rental> rental = new ArrayList<Rental>();
-		rental.add(rental1);
-		rental.add(rental2);
-		rental.add(rental3);
+			List<Rental> rental = new ArrayList<Rental>();
+			rental.add(rental1);
+			rental.add(rental2);
+			rental.add(rental3);
 
-		System.out.println("The Movie Club Profit is " + movieClubProfit(rental));
-	}
+			System.out.println("The Movie Club Profit is " + movieClubProfit(rental));
+		  
 
-	private static double movieClubProfit(List<Rental> rental) {
-		Iterator<Rental> itr = rental.iterator();
-		double rentAmountTotal = 0;
-		while (itr.hasNext()) {
-			Rental rentalInstance = (Rental) itr.next();
-			rentAmountTotal += rentalInstance.calcRentAmount();
-		}
-		return rentAmountTotal;
-	}
-	*/
+			private static double movieClubProfit(List<Rental> rental) 
+			{
+				Iterator<Rental> itr = rental.iterator();
+				double rentAmountTotal = 0;
+				
+				while (itr.hasNext()) 
+				{
+				Rental rentalInstance = (Rental) itr.next();
+				rentAmountTotal += rentalInstance.calcRentAmount();
+				}
+				
+				return rentAmountTotal;
+			}
+		 */
 	}
 }

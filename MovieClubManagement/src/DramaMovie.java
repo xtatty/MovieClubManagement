@@ -18,7 +18,7 @@ public class DramaMovie extends Movie implements Serializable
 		if (daysLate <= 2)
 			rentAmountTotal = RENT_AMOUNT_DEFAULT_DRAMA * daysLate;
 		else if (daysLate > 2)
-			rentAmountTotal = RENT_AMOUNT_DEFAULT_DRAMA * daysLate+ (daysLate * 1);
+			rentAmountTotal = RENT_AMOUNT_DEFAULT_DRAMA * daysLate+ (daysLate - 2);
 		
 		return rentAmountTotal;
 	}
