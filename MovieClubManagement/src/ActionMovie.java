@@ -16,9 +16,9 @@ public class ActionMovie extends Movie implements Serializable
 	public double calcRentAmount(int daysLate)
 	{
 		if (daysLate <= 2)
-			rentAmountTotal = RENT_AMOUNT_DEFAULT_ACTION * daysLate;
+			rentAmountTotal = RENT_AMOUNT_DEFAULT_ACTION;
 		else if (daysLate > 2)
-			rentAmountTotal = RENT_AMOUNT_DEFAULT_ACTION * daysLate + (daysLate - 2);
+			rentAmountTotal = RENT_AMOUNT_DEFAULT_ACTION + (RENT_AMOUNT_DEFAULT_ACTION * (daysLate - 2));
 		
 		return rentAmountTotal;
 	}

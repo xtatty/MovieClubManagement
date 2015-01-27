@@ -25,7 +25,7 @@ public class MovieDemo {
 		@SuppressWarnings("deprecation")
 		Date pastDate = new Date(2014, 06, 20);
 		@SuppressWarnings("deprecation")
-		Date today = new Date(2014, 06, 24);
+		Date today = new Date(2014, 06, 25);
 		
 		NewRental newRentalTest = new NewRental(mov1, pastDate);		
 		
@@ -36,11 +36,11 @@ public class MovieDemo {
 		newRentalTest.getRentAmount();
 		
 		System.out.println("\nRented Movie: " + newRentalTest.getMovie().getMovieTitle());
-		System.out.println("\nRent Amount for the Movie: " + newRentalTest.getRentAmount());
+		System.out.println("Rent Amount for the Movie: " + newRentalTest.getRentAmount());
 
 		
 	    // Calculate Rent Amount 
-		System.out.println("Calculate Rent Amount:");
+		System.out.println("\nCalculate Rent Amount:");
 
 		mov1.calcRentAmount(2);
 		System.out.print("The movie with ID #" + mov1.getMovieID()

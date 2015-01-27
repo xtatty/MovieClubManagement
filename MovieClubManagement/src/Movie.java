@@ -94,9 +94,9 @@ public class Movie implements Serializable
 	public double calcRentAmount(int daysLate)
 	{
 		if (daysLate <= 2)
-			rentAmountTotal = RENT_AMOUNT_DEFAULT * daysLate;
+			rentAmountTotal = RENT_AMOUNT_DEFAULT;
 		else if (daysLate > 2)
-			rentAmountTotal = RENT_AMOUNT_DEFAULT * daysLate + (daysLate - 2);
+			rentAmountTotal = RENT_AMOUNT_DEFAULT + (RENT_AMOUNT_DEFAULT * (daysLate - 2));
 		
 		return rentAmountTotal;
 	}
