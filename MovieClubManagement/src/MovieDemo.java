@@ -25,7 +25,7 @@ public class MovieDemo {
 		@SuppressWarnings("deprecation")
 		Date pastDate = new Date(2014, 06, 20);
 		@SuppressWarnings("deprecation")
-		Date today = new Date(2014, 06, 25);
+		Date today = new Date(2014, 07, 28);
 		
 		NewRental newRentalTest = new NewRental(mov1, pastDate);		
 		
