@@ -14,9 +14,9 @@ public class MovieDemo {
 		DramaMovie mov3 = new DramaMovie(3, "The Yellow Handkerchief", "PG-13");
 		
 		// Creating Rentals
-		Rental rental1 = new Rental(mov1, 3);
-		Rental rental2 = new Rental(mov2, 5);
-		Rental rental3 = new Rental(mov3, 7);
+		OldRental rental1 = new OldRental(mov1, 3);
+		OldRental rental2 = new OldRental(mov2, 5);
+		OldRental rental3 = new OldRental(mov3, 7);
 		
 		// Testing the NewRental Class
 		/* καταχώρηση ενοικίασης μαζί με την ημερομηνία και υπολογισμός 
@@ -27,7 +27,7 @@ public class MovieDemo {
 		@SuppressWarnings("deprecation")
 		Date today = new Date(2014, 07, 28);
 		
-		NewRental newRentalTest = new NewRental(mov1, pastDate);		
+		Rental newRentalTest = new Rental(mov1, pastDate);		
 		
 		int days = newRentalTest.calcRentalDays(pastDate, today);
 		

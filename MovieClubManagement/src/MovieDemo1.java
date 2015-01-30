@@ -62,12 +62,12 @@ public class MovieDemo1 {
 		
 		
 		
-		ArrayList<Rental> rentals; 
-        rentals = new ArrayList<Rental>();		
+		ArrayList<OldRental> rentals; 
+        rentals = new ArrayList<OldRental>();		
 		
-		Rental rental1 = new Rental(mov1, 3);
-		Rental rental2 = new Rental(mov2, 5);
-		Rental rental3 = new Rental(mov3, 7);
+		OldRental rental1 = new OldRental(mov1, 3);
+		OldRental rental2 = new OldRental(mov2, 5);
+		OldRental rental3 = new OldRental(mov3, 7);
 		
 		rentals.add(rental1);
 		rentals.add(rental2);

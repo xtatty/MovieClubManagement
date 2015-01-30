@@ -16,8 +16,8 @@ public class MovieDemo2 {
         movies = new ArrayList<Movie>();
        		
 		
-		ArrayList<Rental> rentals; 
-        rentals = new ArrayList<Rental>();		
+		ArrayList<OldRental> rentals; 
+        rentals = new ArrayList<OldRental>();		
 		
 
         try
