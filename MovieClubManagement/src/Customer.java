@@ -89,7 +89,9 @@ public class Customer {
     		while(Rentals.hasMoreElements()) {
     			Rental each = (Rental) Rentals.nextElement();
     			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
-    			String.valueOf(each.calcRentalDays(each.getRentalDate(), each.getReturnDate())) + "\n";
+    			"Μέρες ενοικίασης: "+ 
+    			each.calcRentalDays(each.getRentalDate(), each.getReturnDate()) + "\t"+
+    			"Κόστος ενοικίασης: " + each.getRentAmount() ;
     		}
     		System.out.println(result);
         }
