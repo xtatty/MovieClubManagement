@@ -91,7 +91,7 @@ public class Customer {
     			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
     			"Μέρες ενοικίασης: "+ 
     			each.calcRentalDays(each.getRentalDate(), each.getReturnDate()) + "\t"+
-    			"Κόστος ενοικίασης: " + each.getRentAmount() ;
+    			"Κόστος ενοικίασης: " + each.getRentAmount() + "\n" ;
     		}
     		System.out.println(result);
         }
