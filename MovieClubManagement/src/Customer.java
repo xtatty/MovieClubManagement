@@ -89,9 +89,9 @@ public class Customer {
     		while(Rentals.hasMoreElements()) {
     			Rental each = (Rental) Rentals.nextElement();
     			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
-    			String.valueOf(each.getRentAmount()) + "\n";
-    			System.out.println(result);
+    			String.valueOf(each.calcRentalDays(each.getRentalDate(), each.getReturnDate())) + "\n";
     		}
+    		System.out.println(result);
         }
       
 }

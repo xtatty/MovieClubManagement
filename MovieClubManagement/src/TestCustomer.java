@@ -35,7 +35,9 @@ public class TestCustomer {
 				
 		// Creating Rentals
 		Rental rent1 = new Rental(mov1, rentDate1);
+		rent1.setReturnDate(returnDay1);
 		Rental rent2 = new Rental(mov2, rentDate2);
+		rent2.setReturnDate(returnDay2);
 		Rental rent3 = new Rental(mov3, rentDate3);
 		
 		// Creating Vector for customer rentals
