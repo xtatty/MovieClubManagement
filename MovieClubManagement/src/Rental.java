@@ -18,7 +18,7 @@ public class Rental implements Serializable {
 	// Constructor
 	public Rental(Movie movDetails, Date rentalDate) {
 		this.movie = movDetails;
-		this.rentalDate = rentalDate;
+		this.setRentalDate(rentalDate);
 	}
 	
 	
@@ -44,6 +44,26 @@ public class Rental implements Serializable {
 		
 		this.noOfDaysLate = days;
 		return noOfDaysLate;
+	}
+
+
+	public Date getRentalDate() {
+		return rentalDate;
+	}
+
+
+	public void setRentalDate(Date rentalDate) {
+		this.rentalDate = rentalDate;
+	}
+
+
+	public Date getReturnDate() {
+		return returnDate;
+	}
+
+
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
 	}
 	
 	/*  Κώδικας που δουλεύει και κάνει αφαίρεση 2 ημερομηνιών
