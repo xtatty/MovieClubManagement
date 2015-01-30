@@ -1,23 +1,21 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Enumeration;
+import java.util.Vector;
 
 public class Customer {
 
 		protected int id;
 		protected String firstName;
 		protected String lastName;
-		protected Date dateRegistration;
-		protected String address;
 		protected String contactInfo;
-		protected ArrayList<Movie> rentedMovies;
+		protected Vector<Rental> rentals = new Vector<Rental>();
 		
-		public Customer(String firstName, String lastName, Date dateRegistration, String address, String contactInfo, ArrayList<Movie> rentedMov) {
+		public Customer(String firstName, String lastName, String contactInfo, Vector<Rental> rentals) {
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.dateRegistration = dateRegistration;
-                this.address = address;
                 this.contactInfo = contactInfo;
-                this.rentedMovies = rentedMov;
+                this.rentals= rentals;
         }
 
         public int getId() {
@@ -34,20 +32,6 @@ public class Customer {
         	}     	
         }
         
-        public String getAddress() {
-            return address;
-        }
-
-        public void setAddress(String Address) {
-        	if (Address.equals("") || Address.equals(" "))
-        	{
-        		System.out.println("Error: Empty Address");
-        		System.exit(0);
-        	}
-        	else
-        		address = Address;
-       	}
-
         public String getContactInfo() {
             return contactInfo;
         }
@@ -91,26 +75,23 @@ public class Customer {
         		lastName = LastName;     
         }
 
-        public Date getDateRegistration() {
-                return dateRegistration;
-        }
-
-        public void setDateRegistration(Date DateRegistration) {
-        	if (DateRegistration.equals("") || DateRegistration.equals(" "))
-        	{
-        		System.out.println("Error: Empty Registration Date");
-        		System.exit(0);
-        	}
-        	else
-        		dateRegistration = DateRegistration;   
-        }
+        public void addRental(Rental aRental) {
+    		rentals.addElement(aRental);
+    	}
         
-        public ArrayList<Movie> getRentedMovies() {
-            return rentedMovies;
+        public void removeRental(Rental aRental) {
+    		rentals.removeElement(aRental);
+    	}
+        
+        public void printRentalDetails() {
+    		Enumeration<Rental> Rentals = rentals.elements();
+    		String result = "Rental for " + getLastName() + getFirstName()+  "\n";
+    		while(Rentals.hasMoreElements()) {
+    			Rental each = (Rental) Rentals.nextElement();
+    			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
+    			String.valueOf(each.getRentAmount()) + "\n";
+    			System.out.println(result);
+    		}
         }
-
-        public void AddToRentedMovies(Movie aMovie) {
-    	
-        	rentedMovies.add(aMovie);
-        }          
+      
 }
