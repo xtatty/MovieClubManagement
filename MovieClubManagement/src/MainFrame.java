@@ -102,10 +102,10 @@ public class MainFrame extends JFrame {
 
 		
 		JLabel label = new JLabel("");
-		label.setBounds(120, 75, 0, 0);
+		label.setBounds(120, 108, 0, 0);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(125, 10, 120, 130);
+		scrollPane.setBounds(125, 43, 120, 130);
 		
 		JList movieList = new JList();
 		movieList.setVisibleRowCount(10);
@@ -136,7 +136,7 @@ public class MainFrame extends JFrame {
 
 
 		});
-		btnDelete.setBounds(109, 151, 148, 23);
+		btnDelete.setBounds(109, 184, 148, 23);
 		
 		
 		contentPane.setLayout(null);
@@ -145,7 +145,7 @@ public class MainFrame extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(372, 10, 110, 130);
+		scrollPane_1.setBounds(372, 43, 110, 130);
 		contentPane.add(scrollPane_1);
 		
 		JList customerList = new JList();
@@ -179,11 +179,15 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
-		btnDelCustomer.setBounds(353, 151, 156, 23);
+		btnDelCustomer.setBounds(353, 184, 156, 23);
 		contentPane.add(btnDelCustomer);
 		contentPane.add(scrollPane_1);
 		
 		JButton rentalsButton = new JButton("Ενοικιάσεις");
+		rentalsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		rentalsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -191,7 +195,7 @@ public class MainFrame extends JFrame {
 				new custRentals(customers, id);
 			}
 		});
-		rentalsButton.setBounds(44, 270, 156, 23);
+		rentalsButton.setBounds(224, 303, 156, 23);
 		contentPane.add(rentalsButton);
 		
 		JButton btnNewButton = new JButton("\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
@@ -200,7 +204,7 @@ public class MainFrame extends JFrame {
 				new AddCustomerGUI(allCustomers);
 			}
 		});
-		btnNewButton.setBounds(353, 185, 156, 23);
+		btnNewButton.setBounds(353, 218, 156, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton button_1 = new JButton("\u0391\u03BD\u03B1\u03BD\u03AD\u03C9\u03C3\u03B7");
@@ -212,7 +216,7 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-		button_1.setBounds(255, 75, 107, 23);
+		button_1.setBounds(255, 108, 107, 23);
 		contentPane.add(button_1);
 		
 		JButton btnWriteMovie = new JButton("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
@@ -222,7 +226,7 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-		btnWriteMovie.setBounds(109, 185, 148, 23);
+		btnWriteMovie.setBounds(109, 218, 148, 23);
 		contentPane.add(btnWriteMovie);
 		
 		JButton newRentalButton = new JButton("\u039D\u03AD\u03B1 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7");
@@ -268,35 +272,35 @@ public class MainFrame extends JFrame {
 			
 			}
 		});
-		newRentalButton.setBounds(224, 270, 156, 23);
+		newRentalButton.setBounds(45, 303, 156, 23);
 		contentPane.add(newRentalButton);
 		
 		dayTextField = new JTextField();
-		dayTextField.setBounds(224, 337, 33, 20);
+		dayTextField.setBounds(224, 370, 33, 20);
 		contentPane.add(dayTextField);
 		dayTextField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("/");
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_1.setBounds(328, 338, 8, 20);
+		label_1.setBounds(328, 371, 8, 20);
 		contentPane.add(label_1);
 		
 		monthTextField = new JTextField();
 		monthTextField.setColumns(10);
-		monthTextField.setBounds(285, 338, 33, 20);
+		monthTextField.setBounds(285, 371, 33, 20);
 		contentPane.add(monthTextField);
 		
 		yearTextField = new JTextField();
 		yearTextField.setColumns(10);
-		yearTextField.setBounds(347, 338, 33, 20);
+		yearTextField.setBounds(347, 371, 33, 20);
 		contentPane.add(yearTextField);
 		
 		JLabel label_2 = new JLabel("/");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_2.setBounds(267, 338, 8, 20);
+		label_2.setBounds(267, 371, 8, 20);
 		contentPane.add(label_2);
 		
-		JButton calcAmountButton = new JButton("\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03BC\u03CC\u03C2 \u039A\u03CC\u03C3\u03C4\u03BF\u03C5\u03C2");
+		JButton calcAmountButton = new JButton("\u039A\u03CC\u03C3\u03C4\u03BF\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2");
 		calcAmountButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -327,9 +331,9 @@ public class MainFrame extends JFrame {
 	    		String result = "";
 	    		while(Rentals.hasMoreElements()) {
 	    			Rental each = (Rental) Rentals.nextElement();
-	    			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
-	    			"Μέρες ενοικίασης: "+ 
-	    			each.calcRentalDays(each.getRentalDate(), each.getReturnDate()) + "\t"+
+	    			result += each.getMovie().getMovieTitle() + "--> " +
+	    			"Μέρες ενοικίασης: " + 
+	    			each.calcRentalDays(each.getRentalDate(), returnDate) + ", "+
 	    			"Κόστος ενοικίασης: " + each.getRentAmount() + "\n" ;
 	
 			}
@@ -337,8 +341,33 @@ public class MainFrame extends JFrame {
 	    		new ShowAmountGUI(result);
 			}
 			});
-		calcAmountButton.setBounds(405, 270, 156, 23);
+		calcAmountButton.setBounds(404, 303, 156, 23);
 		contentPane.add(calcAmountButton);
+		
+		JLabel label_3 = new JLabel("  \u0397");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		label_3.setBounds(224, 393, 33, 20);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("  \u039C");
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		label_4.setBounds(285, 394, 33, 20);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("  \u03A7");
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		label_5.setBounds(347, 394, 33, 20);
+		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("     \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
+		label_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		label_6.setBounds(125, 22, 120, 20);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("    \u03A0\u0395\u039B\u0391\u03A4\u0395\u03A3");
+		label_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		label_7.setBounds(372, 22, 110, 20);
+		contentPane.add(label_7);
 		
 		
 		
@@ -346,7 +375,7 @@ public class MainFrame extends JFrame {
 		
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 619, 430);
+		setBounds(100, 100, 619, 462);
 	}
 
 	/**

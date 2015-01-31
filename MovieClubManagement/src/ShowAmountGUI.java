@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
 
 
 public class ShowAmountGUI extends JFrame {
@@ -34,21 +36,23 @@ public class ShowAmountGUI extends JFrame {
 	 */
 	public ShowAmountGUI(String result) {
 		this.setVisible(true);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 153);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		amountTextField = new JTextField();
-		amountTextField.setBounds(80, 37, 245, 56);
+		amountTextField.setBounds(10, 47, 414, 56);
 		contentPane.add(amountTextField);
 		amountTextField.setColumns(10);
 		amountTextField.setText(result);
 		
 		
 		JLabel label = new JLabel("\u03A3\u03C5\u03BD\u03BF\u03BB\u03B9\u03BA\u03CC \u039A\u03CC\u03C3\u03C4\u03BF\u03C2");
-		label.setBounds(139, 11, 98, 14);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label.setBounds(142, 11, 182, 22);
 		contentPane.add(label);
 		
 		
