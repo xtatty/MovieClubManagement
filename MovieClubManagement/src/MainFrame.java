@@ -116,6 +116,7 @@ public class MainFrame extends JFrame {
 						refreshMovieList(movieList);
 						
 						DBReadWrite.dbWriteMovie(allMovies);
+						break;
 					}
 				}
 				
