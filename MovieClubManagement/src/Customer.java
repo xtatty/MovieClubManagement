@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.Vector;
 
-public class Customer {
+public class Customer implements Serializable {
 
 		protected int id;
 		protected String firstName;
@@ -95,5 +96,9 @@ public class Customer {
     		}
     		System.out.println(result);
         }
+
+		public Vector<Rental> getRentals() {
+			return rentals;
+		}
       
 }
