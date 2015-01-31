@@ -39,7 +39,7 @@ public class custRentals extends JFrame {
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
-		textField.setDropMode(DropMode.ON);
+		//textField.setDropMode(DropMode.ON);
 		textField.setColumns(2);
 		textField.setBounds(98, 18, 262, 98);
 		contentPane.add(textField);
