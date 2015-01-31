@@ -97,8 +97,19 @@ public class Customer implements Serializable {
     		System.out.println(result);
         }
 
-		public Vector<Rental> getRentals() {
+        public String getRentals() {
+    		Enumeration<Rental> Rentals = rentals.elements();
+    		String result = "";
+    		while(Rentals.hasMoreElements()) {
+    			Rental each = (Rental) Rentals.nextElement();
+    			result += each.getMovie().getMovieTitle() + ", " ;
+    		}
+    		return result;
+        }
+        
+        
+/*		public Vector<Rental> getRentals() {
 			return rentals;
-		}
+		}*/
       
 }

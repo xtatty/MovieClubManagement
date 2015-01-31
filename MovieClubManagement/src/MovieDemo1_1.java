@@ -121,7 +121,25 @@ public class MovieDemo1_1 {
 				rent1.setReturnDate(returnDay1);
 				Rental rent2 = new Rental(mov2, rentDate2);
 				rent2.setReturnDate(returnDay2);
-				Rental rent3 = new Rental(mov3, rentDate3);
+				
+				Rental rent3 = new Rental(mov1, rentDate1);
+				rent3.setReturnDate(returnDay1);
+				Rental rent4 = new Rental(mov2, rentDate2);
+				rent2.setReturnDate(returnDay2);
+				
+				Rental rent5 = new Rental(mov1, rentDate1);
+				rent5.setReturnDate(returnDay1);
+				Rental rent6 = new Rental(mov2, rentDate2);
+				rent6.setReturnDate(returnDay2);
+				
+				Rental rent7 = new Rental(mov1, rentDate1);
+				rent7.setReturnDate(returnDay1);
+				Rental rent8 = new Rental(mov2, rentDate2);
+				rent8.setReturnDate(returnDay2);
+				
+				
+				Rental rent9 = new Rental(mov3, rentDate3);
+				rent9.setReturnDate(returnDay3);
 				
 				// Creating Vector for customer rentals
 				Vector<Rental> rentalsCust1 = new Vector<Rental>();
@@ -132,7 +150,14 @@ public class MovieDemo1_1 {
 				rentalsCust1.addElement(rent1);
 				rentalsCust1.addElement(rent2);
 				rentalsCust1.addElement(rent3);
-				rentalsCust1.removeElement(rent3);
+				
+				rentalsCust1.addElement(rent4);
+				rentalsCust1.addElement(rent5);
+				rentalsCust1.addElement(rent6);
+				rentalsCust1.addElement(rent7);
+				rentalsCust1.addElement(rent8);
+				
+		//		rentalsCust1.removeElement(rent3);
 				
 				// Creating Customer
 				Customer cust1 = new Customer("Γεώργιος", "Παπαδάκης", "6974548479", rentalsCust1);

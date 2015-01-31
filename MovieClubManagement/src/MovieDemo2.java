@@ -59,6 +59,9 @@ public class MovieDemo2 {
           }
         
 	
+   //     MainFrame mf = new MainFrame(movies);
+      //  mf.setAllMovies(movies);
+        
 
 
 		// Verify ID Mutator Method

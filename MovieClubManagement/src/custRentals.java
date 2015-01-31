@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DropMode;
 
 
 public class custRentals extends JFrame {
@@ -38,6 +39,8 @@ public class custRentals extends JFrame {
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
+		textField.setDropMode(DropMode.ON);
+		textField.setColumns(2);
 		textField.setBounds(98, 18, 262, 98);
 		contentPane.add(textField);
 	//	textField.setColumns(10);
@@ -49,7 +52,7 @@ public class custRentals extends JFrame {
 			{
 
 			//	textField.setText(custName);
-				textField.setText(theCustomer.getRentals().toString());
+				textField.setText(theCustomer.getRentals());
 				break;
 			}
 		}

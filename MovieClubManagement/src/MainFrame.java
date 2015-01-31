@@ -1,7 +1,9 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -14,9 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-
-public class MainFrame1_new extends JFrame {
-
+public class MainFrame extends JFrame {
 	private JPanel contentPane;
 	private ArrayList<Movie> allMovies = new ArrayList<Movie>();
 	private ArrayList<Customer> allCustomers = new ArrayList<Customer>();
@@ -24,27 +24,88 @@ public class MainFrame1_new extends JFrame {
 	private DefaultListModel modelForCustomers;
 	JScrollPane scrollpane;
 	JScrollPane scrollpane1;
+	
+	public static void main(String[] args) {
+		System.out.println("Execution Starts:");
+		System.out.println();
+		
+		ArrayList<Movie> movies; 
+        movies = new ArrayList<Movie>();
+       		
+        ArrayList<Customer> customers; 
+        customers = new ArrayList<Customer>();
+		
+		ArrayList<OldRental> rentals; 
+        rentals = new ArrayList<OldRental>();		
+		
 
-	/**
-	 * Launch the application.
-	 */
-/*	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame1_new frame = new MainFrame1_new();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+        try
+        {
+            FileInputStream fis = new FileInputStream("C:/Users/Public/movies.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            movies = (ArrayList) ois.readObject();
+            ois.close();
+            fis.close();
+         }catch(IOException ioe){
+             ioe.printStackTrace();
+             return;
+          }catch(ClassNotFoundException c){
+             System.out.println("Class not found");
+             c.printStackTrace();
+             return;
+          }
+        
+        System.out.println("Διαθέσιμοι Τίτλοι:");
+        for(Movie amovie: movies){
+        	System.out.println("ID = " + amovie.getMovieID() + " Title = "+amovie.getMovieTitle());
+        	}
+
+        
+/*        try
+        {
+            FileInputStream fis = new FileInputStream("C:/Users/Public/rentals.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            rentals = (ArrayList) ois.readObject();
+            ois.close();
+            fis.close();
+         }catch(IOException ioe){
+             ioe.printStackTrace();
+             return;
+          }catch(ClassNotFoundException c){
+             System.out.println("Class not found");
+             c.printStackTrace();
+             return;
+          }*/
+        try
+        {
+            FileInputStream fis = new FileInputStream("C:/Users/Public/customers.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            customers = (ArrayList) ois.readObject();
+            ois.close();
+            fis.close();
+         }catch(IOException ioe){
+             ioe.printStackTrace();
+             return;
+          }catch(ClassNotFoundException c){
+             System.out.println("Class not found");
+             c.printStackTrace();
+             return;
+          }
+        
+	
+        MainFrame mf = new MainFrame(movies,customers);
+        
+        System.out.println("Ενοικοιάσεις:");
+        
+        for(Customer acustomer: customers){
+        	
+        	System.out.println("ID = " + acustomer.id + " Name = "+ acustomer.lastName + "Rentals" );
+        	acustomer.printRentalDetails();
+        	}
+		
 	}
-*/
-	/**
-	 * Create the frame.
-	 */
-	public MainFrame1_new(ArrayList<Movie> Movies, ArrayList<Customer> customers) {
+
+	public MainFrame(ArrayList<Movie> Movies, ArrayList<Customer> customers) {
 		allMovies = Movies;
 		allCustomers = customers;
 		setTitle("Movie Club Management");
@@ -94,7 +155,7 @@ public class MainFrame1_new extends JFrame {
 							modelForMovies.addElement(aMovie.getMovieTitle());
 						list.setModel(modelForMovies);
 						
-						dbWrite();
+						DBReadWrite.dbWrite(allMovies);
 						
 						break;
 					}
@@ -102,17 +163,7 @@ public class MainFrame1_new extends JFrame {
 				
 			}
 
-			private void dbWrite() {
-				try{
-				    FileOutputStream fileOut= new FileOutputStream("C:/Users/Public/movies.ser");
-				    ObjectOutputStream out= new ObjectOutputStream(fileOut);
-				    out.writeObject(allMovies);
-				    out.close();
-				    fileOut.close();
-				  }catch(IOException ioe){
-				       ioe.printStackTrace();
-				   }
-			}
+
 		});
 		btnDelete.setBounds(135, 151, 107, 23);
 		
@@ -155,5 +206,7 @@ public class MainFrame1_new extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 593, 294);
 	}
-
+	
+	
+	
 }
