@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
@@ -112,6 +113,7 @@ public class AddCustomerGUI extends JFrame {
 				customers.add(aCustomer);
 				
 				DBReadWrite.dbWriteCust(customers);
+				JOptionPane.showMessageDialog(null, "Επιτυχής καταχώρηση πελάτη");
 				
 				
 				// refreshCustJList();

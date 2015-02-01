@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
@@ -97,6 +98,7 @@ public class AddMovieGUI extends JFrame {
 				movies.add(aMovie);
 				
 				DBReadWrite.dbWriteMovie(movies);
+				JOptionPane.showMessageDialog(null, "Επιτυχής καταχώρηση ταινίας");
 				
 
 			}

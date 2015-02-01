@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
@@ -98,7 +99,11 @@ public class MainFrame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnDelete = new JButton("\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		JButton btnMovieDelete = new JButton("\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		btnMovieDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 
 		
 		JLabel label = new JLabel("");
@@ -113,7 +118,7 @@ public class MainFrame extends JFrame {
 		scrollPane.setViewportView(movieList);
 		
 		// Διαγραφή ταινίας
-		btnDelete.addMouseListener(new MouseAdapter() {
+		btnMovieDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				String movieName = (String) movieList.getSelectedValue();
@@ -128,6 +133,7 @@ public class MainFrame extends JFrame {
 						refreshMovieList(movieList);
 						
 						DBReadWrite.dbWriteMovie(allMovies);
+						JOptionPane.showMessageDialog(null, "Επιτυχής διαγραφή ταινίας");
 						break;
 					}
 				}
@@ -136,11 +142,11 @@ public class MainFrame extends JFrame {
 
 
 		});
-		btnDelete.setBounds(109, 184, 148, 23);
+		btnMovieDelete.setBounds(109, 184, 148, 23);
 		
 		
 		contentPane.setLayout(null);
-		contentPane.add(btnDelete);
+		contentPane.add(btnMovieDelete);
 		contentPane.add(label);
 		contentPane.add(scrollPane);
 		
@@ -154,6 +160,10 @@ public class MainFrame extends JFrame {
 		scrollPane_1.setViewportView(customerList);
 		
 		JButton btnDelCustomer = new JButton("\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE  \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
+		btnDelCustomer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnDelCustomer.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -173,6 +183,7 @@ public class MainFrame extends JFrame {
 						refreshCustomerList(customerList);
 						
 						DBReadWrite.dbWriteCust(allCustomers);
+						JOptionPane.showMessageDialog(null, "Επιτυχής διαγραφή πελάτη");
 						
 						break;
 					}
@@ -184,6 +195,10 @@ public class MainFrame extends JFrame {
 		contentPane.add(scrollPane_1);
 		
 		JButton rentalsButton = new JButton("Ενοικιάσεις");
+		rentalsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 
 		rentalsButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -265,7 +280,7 @@ public class MainFrame extends JFrame {
 				foundCustomer.addRental(newRental);
 				DBReadWrite.dbWriteCust(customers);
 				DBReadWrite.dbReadCust();
-			
+				JOptionPane.showMessageDialog(null, "Επιτυχής ενοικίαση ταινίας");
 			
 			}
 		});
