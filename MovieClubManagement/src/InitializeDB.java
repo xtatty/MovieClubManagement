@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class MovieDemo1_1 {
+public class InitializeDB {
 	public static void main(String[] args) {
 		System.out.println("Execution Starts:");
 		System.out.println();
@@ -101,26 +101,26 @@ public class MovieDemo1_1 {
 				@SuppressWarnings("deprecation")
 				Date rentDate1 = new Date(2014, 6, 20);
 				
-				@SuppressWarnings("deprecation")
-				Date returnDay1 = new Date(2014, 6, 28);
+/*				@SuppressWarnings("deprecation")
+				Date returnDay1 = new Date(2014, 6, 28);*/
 				
 				@SuppressWarnings("deprecation")
 				Date rentDate2 = new Date(2014, 8, 22);
 				
-				@SuppressWarnings("deprecation")
+/*				@SuppressWarnings("deprecation")
 				Date returnDay2 = new Date(2014, 8, 24);
 				
 				@SuppressWarnings("deprecation")
 				Date rentDate3 = new Date(2014, 7, 23);
 				
 				@SuppressWarnings("deprecation")
-				Date returnDay3 = new Date(2014, 7, 27);
+				Date returnDay3 = new Date(2014, 7, 27);*/
 				
 				// Creating Rentals
 				Rental rent1 = new Rental(mov1, rentDate1);
-				rent1.setReturnDate(returnDay1);
+				// rent1.setReturnDate(returnDay1);
 				Rental rent2 = new Rental(mov2, rentDate2);
-				rent2.setReturnDate(returnDay2);
+				// rent2.setReturnDate(returnDay2);
 				
 /*				Rental rent3 = new Rental(mov1, rentDate1);
 				rent3.setReturnDate(returnDay1);
