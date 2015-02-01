@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
 	public MainFrame(ArrayList<Movie> Movies, ArrayList<Customer> customers) {
 		allMovies = Movies;
 		allCustomers = customers;
-		setTitle("Movie Club Management");
+		setTitle("  Movie Club Management");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		
@@ -110,7 +110,7 @@ public class MainFrame extends JFrame {
 		label.setBounds(120, 108, 0, 0);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(125, 43, 120, 130);
+		scrollPane.setBounds(48, 43, 195, 150);
 		
 		JList movieList = new JList();
 		movieList.setVisibleRowCount(10);
@@ -142,7 +142,7 @@ public class MainFrame extends JFrame {
 
 
 		});
-		btnMovieDelete.setBounds(109, 184, 148, 23);
+		btnMovieDelete.setBounds(70, 235, 148, 23);
 		
 		
 		contentPane.setLayout(null);
@@ -151,7 +151,7 @@ public class MainFrame extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(372, 43, 110, 130);
+		scrollPane_1.setBounds(372, 43, 195, 150);
 		contentPane.add(scrollPane_1);
 		
 		JList customerList = new JList();
@@ -190,7 +190,7 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
-		btnDelCustomer.setBounds(353, 184, 156, 23);
+		btnDelCustomer.setBounds(392, 266, 156, 23);
 		contentPane.add(btnDelCustomer);
 		contentPane.add(scrollPane_1);
 		
@@ -207,7 +207,7 @@ public class MainFrame extends JFrame {
 				new CustomerRentalsGUI(customers, id);
 			}
 		});
-		rentalsButton.setBounds(224, 303, 156, 23);
+		rentalsButton.setBounds(231, 349, 156, 23);
 		contentPane.add(rentalsButton);
 		
 		JButton btnNewButton = new JButton("\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
@@ -216,7 +216,7 @@ public class MainFrame extends JFrame {
 				new AddCustomerGUI(allCustomers);
 			}
 		});
-		btnNewButton.setBounds(353, 218, 156, 23);
+		btnNewButton.setBounds(392, 235, 156, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton button_1 = new JButton("\u0391\u03BD\u03B1\u03BD\u03AD\u03C9\u03C3\u03B7");
@@ -228,17 +228,17 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-		button_1.setBounds(255, 108, 107, 23);
+		button_1.setBounds(253, 110, 107, 23);
 		contentPane.add(button_1);
 		
-		JButton btnWriteMovie = new JButton("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		JButton btnWriteMovie = new JButton("\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
 		btnWriteMovie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new AddMovieGUI(allMovies);
 				
 			}
 		});
-		btnWriteMovie.setBounds(109, 218, 148, 23);
+		btnWriteMovie.setBounds(70, 204, 148, 23);
 		contentPane.add(btnWriteMovie);
 		
 		JButton newRentalButton = new JButton("\u039D\u03AD\u03B1 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7");
@@ -274,6 +274,8 @@ public class MainFrame extends JFrame {
 				int month = Integer.parseInt(monthTextField.getText());	
 				int year = Integer.parseInt(yearTextField.getText());
 				
+				month = month + 1;
+				
 				Date rentalDate = new Date(year, month, day);
 				
 				Rental newRental = new Rental(foundMovie, rentalDate);
@@ -284,32 +286,32 @@ public class MainFrame extends JFrame {
 			
 			}
 		});
-		newRentalButton.setBounds(45, 303, 156, 23);
+		newRentalButton.setBounds(52, 349, 156, 23);
 		contentPane.add(newRentalButton);
 		
 		dayTextField = new JTextField();
-		dayTextField.setBounds(226, 381, 33, 20);
+		dayTextField.setBounds(226, 406, 33, 20);
 		contentPane.add(dayTextField);
 		dayTextField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("/");
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_1.setBounds(330, 382, 8, 20);
+		label_1.setBounds(330, 407, 8, 20);
 		contentPane.add(label_1);
 		
 		monthTextField = new JTextField();
 		monthTextField.setColumns(10);
-		monthTextField.setBounds(287, 382, 33, 20);
+		monthTextField.setBounds(287, 407, 33, 20);
 		contentPane.add(monthTextField);
 		
 		yearTextField = new JTextField();
 		yearTextField.setColumns(10);
-		yearTextField.setBounds(349, 382, 33, 20);
+		yearTextField.setBounds(349, 407, 33, 20);
 		contentPane.add(yearTextField);
 		
 		JLabel label_2 = new JLabel("/");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_2.setBounds(269, 382, 8, 20);
+		label_2.setBounds(269, 407, 8, 20);
 		contentPane.add(label_2);
 		
 		JButton calcAmountButton = new JButton("\u039A\u03CC\u03C3\u03C4\u03BF\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2");
@@ -336,6 +338,8 @@ public class MainFrame extends JFrame {
 				int month = Integer.parseInt(monthTextField.getText());	
 				int year = Integer.parseInt(yearTextField.getText());
 				
+				month = month + 1;
+				
 				Date returnDate = new Date(year, month, day);
 				
 							
@@ -353,38 +357,42 @@ public class MainFrame extends JFrame {
 	    		new ShowAmountGUI(result);
 			}
 			});
-		calcAmountButton.setBounds(404, 303, 156, 23);
+		calcAmountButton.setBounds(411, 349, 156, 23);
 		contentPane.add(calcAmountButton);
 		
 		JLabel label_3 = new JLabel("  \u0397");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_3.setBounds(226, 404, 33, 20);
+		label_3.setBounds(226, 429, 33, 20);
 		contentPane.add(label_3);
 		
 		JLabel label_4 = new JLabel("  \u039C");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_4.setBounds(287, 405, 33, 20);
+		label_4.setBounds(287, 430, 33, 20);
 		contentPane.add(label_4);
 		
 		JLabel lblE = new JLabel("  E");
 		lblE.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblE.setBounds(349, 405, 33, 20);
+		lblE.setBounds(349, 430, 33, 20);
 		contentPane.add(lblE);
 		
 		JLabel label_6 = new JLabel("      \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_6.setBounds(125, 22, 120, 20);
+		label_6.setBounds(87, 22, 120, 20);
 		contentPane.add(label_6);
 		
 		JLabel label_7 = new JLabel("     \u03A0\u0395\u039B\u0391\u03A4\u0395\u03A3");
 		label_7.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_7.setBounds(372, 22, 110, 20);
+		label_7.setBounds(411, 22, 110, 20);
 		contentPane.add(label_7);
 		
 		JLabel label_8 = new JLabel("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u0397\u03BC/\u03BD\u03AF\u03B1\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2/\u0395\u03C0\u03B9\u03C3\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2 \u03C4\u03B7\u03C2 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_8.setBounds(155, 358, 296, 20);
+		label_8.setBounds(155, 383, 296, 20);
 		contentPane.add(label_8);
+		
+		JButton button = new JButton("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
+		button.setBounds(392, 204, 156, 23);
+		contentPane.add(button);
 		
 		
 		
@@ -392,7 +400,7 @@ public class MainFrame extends JFrame {
 		
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(400, 100, 619, 475);
+		setBounds(400, 100, 619, 500);
 	}
 
 	/**
