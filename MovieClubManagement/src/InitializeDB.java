@@ -111,9 +111,9 @@ public class InitializeDB {
 				rentalsCust1.addElement(rent2);
 				
 				// Creating Customer
-				Customer cust1 = new Customer("Γεώργιος", "Παπαδάκης", "6974548479", rentalsCust1);
-				Customer cust2 = new Customer("Νικόλαος", "Δημητρίου", "6988556323", rentalsCust2);
-				Customer cust3 = new Customer("’ννα", "Ιωάννου", "6955266999", rentalsCust3);
+				Customer cust1 = new Customer(1,"Γεώργιος", "Παπαδάκης", "6974548479", rentalsCust1);
+				Customer cust2 = new Customer(2,"Νικόλαος", "Δημητρίου", "6988556323", rentalsCust2);
+				Customer cust3 = new Customer(3,"’ννα", "Ιωάννου", "6955266999", rentalsCust3);
 				customers.add(cust1);
 				customers.add(cust2);
 				customers.add(cust3);

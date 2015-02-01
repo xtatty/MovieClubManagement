@@ -12,7 +12,9 @@ public class Customer implements Serializable {
 		protected String contactInfo;
 		protected Vector<Rental> rentals = new Vector<Rental>();
 		
-		public Customer(String firstName, String lastName, String contactInfo, Vector<Rental> rentals) {
+		public Customer(int id,String firstName, String lastName, String contactInfo, Vector<Rental> rentals) {
+			
+			 	this.id = id;
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.contactInfo = contactInfo;

@@ -1,33 +1,30 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Vector;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.Color;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 
-public class AddCustomerGUI extends JFrame {
+public class CustomerInfoGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField IDtextField;
 	private JLabel lblId;
 	private JTextField FirstNameTextField;
-	private JTextField LastNameTextField;
 	private JTextField ContactTextField;
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
+	private JTextField lastNameTextField;
 
 	/**
 	 * Launch the application.
@@ -36,20 +33,20 @@ public class AddCustomerGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddCustomerGUI frame = new AddCustomerGUI();
+					CustomerInfoGUI frame = new CustomerInfoGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	}
-*/
+	}*/
+
 	/**
 	 * Create the frame.
 	 */
-	public AddCustomerGUI(ArrayList<Customer> customers) {
-		setTitle("\u03A6\u03CC\u03C1\u03BC\u03B1 \u039A\u03B1\u03C4\u03B1\u03C7\u03CE\u03C1\u03B7\u03C3\u03B7\u03C2 \u039D\u03AD\u03BF\u03C5 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
+	public CustomerInfoGUI(String id, String firstNameCust, String lastNameCust, String telNumberCust) {
+		setTitle("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
 
 		this.setVisible(true);
 		contentPane = new JPanel();
@@ -62,28 +59,29 @@ public class AddCustomerGUI extends JFrame {
 
 		
 		IDtextField = new JTextField();
+		IDtextField.setEditable(false);
 		IDtextField.setBounds(217, 39, 136, 20);
 		contentPane.add(IDtextField);
 		IDtextField.setColumns(10);
+		IDtextField.setText(id);
 		
 		lblId = new JLabel("ID");
 		lblId.setBounds(130, 42, 77, 14);
 		contentPane.add(lblId);
 		
 		FirstNameTextField = new JTextField();
+		FirstNameTextField.setEditable(false);
 		FirstNameTextField.setBounds(217, 82, 136, 20);
 		contentPane.add(FirstNameTextField);
 		FirstNameTextField.setColumns(10);
-		
-		LastNameTextField = new JTextField();
-		LastNameTextField.setBounds(217, 121, 136, 20);
-		contentPane.add(LastNameTextField);
-		LastNameTextField.setColumns(10);
+		FirstNameTextField.setText(firstNameCust);
 		
 		ContactTextField = new JTextField();
+		ContactTextField.setEditable(false);
 		ContactTextField.setBounds(217, 166, 136, 20);
 		contentPane.add(ContactTextField);
 		ContactTextField.setColumns(10);
+		ContactTextField.setText(telNumberCust);
 		
 		label = new JLabel("\u038C\u03BD\u03BF\u03BC\u03B1");
 		label.setBounds(130, 85, 77, 14);
@@ -97,40 +95,18 @@ public class AddCustomerGUI extends JFrame {
 		lblNewLabel_1.setBounds(130, 169, 77, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton button = new JButton("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE");
-		button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				
-				int id = Integer.parseInt(IDtextField.getText());
-				String FirstName = FirstNameTextField.getText();
-				String LastName = LastNameTextField.getText();
-				String TelNumber = ContactTextField.getText();
-				Vector<Rental> rentals = new Vector<Rental>();
-				
-				//Rental aRental = 
-				Customer aCustomer = new Customer(id,FirstName, LastName, TelNumber, rentals);
-				
-				customers.add(aCustomer);
-				
-				DBReadWrite.dbWriteCust(customers);
-				JOptionPane.showMessageDialog(null, "Επιτυχής καταχώρηση πελάτη");
-				
-				
-				// refreshCustJList();
-
-				
-				
-				
-				
-			}
-		});
-		button.setBounds(229, 208, 112, 23);
-		contentPane.add(button);
+		lastNameTextField = new JTextField();
+		lastNameTextField.setText("<dynamic>");
+		lastNameTextField.setEditable(false);
+		lastNameTextField.setColumns(10);
+		lastNameTextField.setBounds(217, 124, 136, 20);
+		contentPane.add(lastNameTextField);
+		lastNameTextField.setText(lastNameCust);
 		
 
 		
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 256);
+		
 	}
 }

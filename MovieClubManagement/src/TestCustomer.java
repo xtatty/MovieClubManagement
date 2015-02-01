@@ -52,7 +52,7 @@ public class TestCustomer {
 		rentalsCust1.removeElement(rent3);
 		
 		// Creating Customer
-		Customer cust1 = new Customer("Γεώργιος", "Παπαδάκης", "6974548479", rentalsCust1);
+		Customer cust1 = new Customer(1,"Γεώργιος", "Παπαδάκης", "6974548479", rentalsCust1);
 		
 		//Printing cust1 rental details
 		cust1.printRentalDetails();

@@ -394,9 +394,37 @@ public class MainFrame extends JFrame {
 		label_8.setBounds(155, 383, 296, 20);
 		contentPane.add(label_8);
 		
-		JButton button = new JButton("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
-		button.setBounds(392, 204, 156, 23);
-		contentPane.add(button);
+		JButton customerInfoButton = new JButton("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
+		customerInfoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				Customer foundCustomer = null;
+				String custListName = (String) customerList.getSelectedValue();
+
+				for (Customer theCustomer: allCustomers)
+				{
+					String customerName = theCustomer.lastName + " " + theCustomer.firstName;
+					if ( customerName.equals(custListName))
+					{
+						foundCustomer = theCustomer;					
+						break;
+					}
+				}
+				
+				int idCustomer = foundCustomer.getId();
+				String idCust = Integer.toString(idCustomer);
+				String firstNameCustomer = foundCustomer.getFirstName();
+				String lastNameCustomer = foundCustomer.getLastName();
+				String telNumberCustomer= foundCustomer.getContactInfo();
+				
+				new CustomerInfoGUI(idCust, firstNameCustomer, lastNameCustomer,telNumberCustomer);
+				
+				
+				
+			}
+		});
+		customerInfoButton.setBounds(392, 204, 156, 23);
+		contentPane.add(customerInfoButton);
 		
 		textField = new JTextField();
 		textField.setBackground(Color.LIGHT_GRAY);
