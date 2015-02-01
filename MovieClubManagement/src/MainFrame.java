@@ -371,17 +371,17 @@ public class MainFrame extends JFrame {
 		label_5.setBounds(349, 405, 33, 20);
 		contentPane.add(label_5);
 		
-		JLabel label_6 = new JLabel("     \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
-		label_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel label_6 = new JLabel("      \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
+		label_6.setFont(new Font("Tahoma", Font.BOLD, 14));
 		label_6.setBounds(125, 22, 120, 20);
 		contentPane.add(label_6);
 		
-		JLabel label_7 = new JLabel("    \u03A0\u0395\u039B\u0391\u03A4\u0395\u03A3");
-		label_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel label_7 = new JLabel("     \u03A0\u0395\u039B\u0391\u03A4\u0395\u03A3");
+		label_7.setFont(new Font("Tahoma", Font.BOLD, 14));
 		label_7.setBounds(372, 22, 110, 20);
 		contentPane.add(label_7);
 		
-		JLabel label_8 = new JLabel("\u0395\u03B9\u03C3\u03B1\u03C3\u03C9\u03B3\u03AE \u0397\u03BC/\u03BD\u03AF\u03B1\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2/\u0395\u03C0\u03B9\u03C3\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2 \u03C4\u03B7\u03C2 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		JLabel label_8 = new JLabel("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u0397\u03BC/\u03BD\u03AF\u03B1\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2/\u0395\u03C0\u03B9\u03C3\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2 \u03C4\u03B7\u03C2 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_8.setBounds(155, 358, 296, 20);
 		contentPane.add(label_8);
