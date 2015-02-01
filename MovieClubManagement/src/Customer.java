@@ -102,7 +102,7 @@ public class Customer implements Serializable {
     		String result = "";
     		while(Rentals.hasMoreElements()) {
     			Rental each = (Rental) Rentals.nextElement();
-    			result += each.getMovie().getMovieTitle() + ", " ;
+    			result += each.getMovie().getMovieTitle() + ",\n " ;
     		}
     		return result;
         }

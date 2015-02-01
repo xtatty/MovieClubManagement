@@ -14,9 +14,9 @@ public class MovieDemo {
 		DramaMovie mov3 = new DramaMovie(3, "The Yellow Handkerchief", "PG-13");
 		
 		// Creating Rentals
-		OldRental rental1 = new OldRental(mov1, 3);
-		OldRental rental2 = new OldRental(mov2, 5);
-		OldRental rental3 = new OldRental(mov3, 7);
+	//	OldRental rental1 = new OldRental(mov1, 3);
+	//	OldRental rental2 = new OldRental(mov2, 5);
+	//	OldRental rental3 = new OldRental(mov3, 7);
 		
 		// Testing the NewRental Class
 		/* καταχώρηση ενοικίασης μαζί με την ημερομηνία και υπολογισμός 

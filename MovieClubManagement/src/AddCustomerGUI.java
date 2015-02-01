@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -103,6 +105,7 @@ public class AddCustomerGUI extends JFrame {
 				String LastName = LastNameTextField.getText();
 				String TelNumber = ContactTextField.getText();
 				
+				//Rental aRental = 
 				Customer aCustomer = new Customer(FirstName, LastName, TelNumber, null);
 				
 				customers.add(aCustomer);

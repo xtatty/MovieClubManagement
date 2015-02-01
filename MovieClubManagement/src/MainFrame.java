@@ -48,8 +48,8 @@ public class MainFrame extends JFrame {
         ArrayList<Customer> customers; 
         customers = new ArrayList<Customer>();
 		
-		ArrayList<OldRental> rentals; 
-        rentals = new ArrayList<OldRental>();		
+//		ArrayList<OldRental> rentals; 
+//        rentals = new ArrayList<OldRental>();		
 		
 
         movies = DBReadWrite.dbReadMovie();
@@ -184,15 +184,12 @@ public class MainFrame extends JFrame {
 		contentPane.add(scrollPane_1);
 		
 		JButton rentalsButton = new JButton("Ενοικιάσεις");
-		rentalsButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+
 		rentalsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String id = (String) customerList.getSelectedValue();
-				new custRentals(customers, id);
+				new CustomerRentalsGUI(customers, id);
 			}
 		});
 		rentalsButton.setBounds(224, 303, 156, 23);
