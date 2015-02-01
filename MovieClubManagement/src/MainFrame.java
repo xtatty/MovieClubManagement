@@ -366,10 +366,10 @@ public class MainFrame extends JFrame {
 		label_4.setBounds(287, 405, 33, 20);
 		contentPane.add(label_4);
 		
-		JLabel label_5 = new JLabel("  \u03A7");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_5.setBounds(349, 405, 33, 20);
-		contentPane.add(label_5);
+		JLabel lblE = new JLabel("  E");
+		lblE.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblE.setBounds(349, 405, 33, 20);
+		contentPane.add(lblE);
 		
 		JLabel label_6 = new JLabel("      \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 14));
