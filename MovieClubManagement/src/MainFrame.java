@@ -26,6 +26,9 @@ import java.awt.Color;
 import javax.swing.JTextField;
 
 import java.awt.Font;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.JTree;
 
 public class MainFrame extends JFrame {
 	private JPanel contentPane;
@@ -38,6 +41,7 @@ public class MainFrame extends JFrame {
 	private JTextField dayTextField;
 	private JTextField monthTextField;
 	private JTextField yearTextField;
+	private JTextField textField;
 	
 	public static void main(String[] args) {
 		System.out.println("Execution Starts:");
@@ -393,6 +397,12 @@ public class MainFrame extends JFrame {
 		JButton button = new JButton("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
 		button.setBounds(392, 204, 156, 23);
 		contentPane.add(button);
+		
+		textField = new JTextField();
+		textField.setBackground(Color.LIGHT_GRAY);
+		textField.setBounds(0, 322, 603, 6);
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
 		
 		
