@@ -29,23 +29,15 @@ public class CustomerInfoGUI extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-/*	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CustomerInfoGUI frame = new CustomerInfoGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+
 
 	/**
 	 * Create the frame.
 	 */
-	public CustomerInfoGUI(String id, String firstNameCust, String lastNameCust, String telNumberCust) {
+
+	
+	
+	public CustomerInfoGUI(Customer aCustomer) {
 		setTitle("\u03A3\u03C4\u03BF\u03B9\u03C7\u03B5\u03AF\u03B1 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
 
 		this.setVisible(true);
@@ -63,7 +55,7 @@ public class CustomerInfoGUI extends JFrame {
 		IDtextField.setBounds(217, 39, 136, 20);
 		contentPane.add(IDtextField);
 		IDtextField.setColumns(10);
-		IDtextField.setText(id);
+		IDtextField.setText(Integer.toString(aCustomer.getId()));
 		
 		lblId = new JLabel("ID");
 		lblId.setBounds(130, 42, 77, 14);
@@ -74,14 +66,14 @@ public class CustomerInfoGUI extends JFrame {
 		FirstNameTextField.setBounds(217, 82, 136, 20);
 		contentPane.add(FirstNameTextField);
 		FirstNameTextField.setColumns(10);
-		FirstNameTextField.setText(firstNameCust);
+		FirstNameTextField.setText(aCustomer.getFirstName());
 		
 		ContactTextField = new JTextField();
 		ContactTextField.setEditable(false);
 		ContactTextField.setBounds(217, 166, 136, 20);
 		contentPane.add(ContactTextField);
 		ContactTextField.setColumns(10);
-		ContactTextField.setText(telNumberCust);
+		ContactTextField.setText(aCustomer.getContactInfo());
 		
 		label = new JLabel("\u038C\u03BD\u03BF\u03BC\u03B1");
 		label.setBounds(130, 85, 77, 14);
@@ -101,7 +93,7 @@ public class CustomerInfoGUI extends JFrame {
 		lastNameTextField.setColumns(10);
 		lastNameTextField.setBounds(217, 124, 136, 20);
 		contentPane.add(lastNameTextField);
-		lastNameTextField.setText(lastNameCust);
+		lastNameTextField.setText(aCustomer.getLastName());
 		
 
 		

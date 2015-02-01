@@ -415,14 +415,8 @@ public class MainFrame extends JFrame {
 					}
 				}
 				
-				int idCustomer = foundCustomer.getId();
-				String idCust = Integer.toString(idCustomer);
-				String firstNameCustomer = foundCustomer.getFirstName();
-				String lastNameCustomer = foundCustomer.getLastName();
-				String telNumberCustomer= foundCustomer.getContactInfo();
-				
-				new CustomerInfoGUI(idCust, firstNameCustomer, lastNameCustomer,telNumberCustomer);
-				
+
+				new CustomerInfoGUI(foundCustomer);
 				
 				
 			}
