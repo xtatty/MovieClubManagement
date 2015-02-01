@@ -40,7 +40,7 @@ public class ShowAmountGUI extends JFrame {
 	public ShowAmountGUI(String result) {
 		setTitle("\u039A\u03CC\u03C3\u03C4\u03BF\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03B9\u03AC\u03C3\u03B5\u03C9\u03BD");
 		this.setVisible(true);
-		setBounds(100, 100, 490, 262);
+		setBounds(100, 100, 570, 275);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,11 +50,11 @@ public class ShowAmountGUI extends JFrame {
 		
 		JLabel label = new JLabel("\u03A3\u03C5\u03BD\u03BF\u03BB\u03B9\u03BA\u03CC \u039A\u03CC\u03C3\u03C4\u03BF\u03C2");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label.setBounds(156, 10, 143, 22);
+		label.setBounds(213, 10, 143, 22);
 		contentPane.add(label);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 43, 454, 170);
+		scrollPane.setBounds(10, 43, 535, 170);
 		contentPane.add(scrollPane);
 		
 		amountTextArea = new JTextArea();

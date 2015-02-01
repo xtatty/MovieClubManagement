@@ -349,14 +349,18 @@ public class MainFrame extends JFrame {
 							
 				Enumeration<Rental> Rentals = foundCustomer.rentals.elements();
 	    		String result = "";
+	    		int sumAmount = 0;
 	    		while(Rentals.hasMoreElements()) {
 	    			Rental each = (Rental) Rentals.nextElement();
-	    			result += each.getMovie().getMovieTitle() + "--> " +
-	    			"Μέρες ενοικίασης: " + 
-	    			each.calcRentalDays(each.getRentalDate(), returnDate) + ", "+
-	    			"Κόστος ενοικίασης: " + each.getRentAmount() + "\n" ;
-	
-			}
+	    			result += each.getMovie().getMovieTitle() + " --> " +
+	    			"Ημέρες ενοικίασης: " + each.calcRentalDays(each.getRentalDate(), returnDate) + "€, " +
+	    			"Ημέρες καθυστέρησης: " + (each.calcRentalDays(each.getRentalDate(), returnDate) - 2) + ", " +		
+	    			"Κόστος ενοικίασης: " + each.getRentAmount() + "€\n" ;
+	    			
+	    			sumAmount += each.getRentAmount();
+	    		}
+	    		
+	    		result += "\nΣΥΝΟΛΟ = " + sumAmount + "€";
 	    		
 	    		new ShowAmountGUI(result);
 			}

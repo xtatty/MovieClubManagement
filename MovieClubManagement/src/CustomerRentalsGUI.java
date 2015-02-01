@@ -83,7 +83,7 @@ public class CustomerRentalsGUI extends JFrame {
 		
 		for (Customer theCustomer: customers)
 		{
-			String custName = theCustomer.getLastName()+" " + theCustomer.firstName;
+			String custName = theCustomer.getLastName() + " " + theCustomer.firstName;
 			if ( custName.equals(acustomer))
 			{
 				custRentalsTextArea.setText(theCustomer.getRentals());
