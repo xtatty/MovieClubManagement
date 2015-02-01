@@ -104,9 +104,10 @@ public class AddCustomerGUI extends JFrame {
 				String FirstName = FirstNameTextField.getText();
 				String LastName = LastNameTextField.getText();
 				String TelNumber = ContactTextField.getText();
+				Vector<Rental> rentals = new Vector<Rental>();
 				
 				//Rental aRental = 
-				Customer aCustomer = new Customer(FirstName, LastName, TelNumber, null);
+				Customer aCustomer = new Customer(FirstName, LastName, TelNumber, rentals);
 				
 				customers.add(aCustomer);
 				
