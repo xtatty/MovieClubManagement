@@ -87,7 +87,7 @@ public class MainFrame extends JFrame {
 	public MainFrame(ArrayList<Movie> Movies, ArrayList<Customer> customers) {
 		allMovies = Movies;
 		allCustomers = customers;
-		setTitle("  Movie Club Management");
+		setTitle("     \u0394\u03B9\u03B1\u03C7\u03B5\u03AF\u03C1\u03B9\u03C3\u03B7 Movie Club");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		
