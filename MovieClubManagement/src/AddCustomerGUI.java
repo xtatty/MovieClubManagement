@@ -49,6 +49,7 @@ public class AddCustomerGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AddCustomerGUI(ArrayList<Customer> customers) {
+		setTitle("\u03A6\u03CC\u03C1\u03BC\u03B1 \u039A\u03B1\u03C4\u03B1\u03C7\u03CE\u03C1\u03B7\u03C3\u03B7\u03C2 \u039D\u03AD\u03BF\u03C5 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
 
 		this.setVisible(true);
 		contentPane = new JPanel();

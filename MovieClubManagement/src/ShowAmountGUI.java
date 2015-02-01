@@ -38,6 +38,7 @@ public class ShowAmountGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public ShowAmountGUI(String result) {
+		setTitle("\u039A\u03CC\u03C3\u03C4\u03BF\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03B9\u03AC\u03C3\u03B5\u03C9\u03BD");
 		this.setVisible(true);
 		setBounds(100, 100, 490, 262);
 		contentPane = new JPanel();

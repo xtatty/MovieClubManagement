@@ -288,28 +288,28 @@ public class MainFrame extends JFrame {
 		contentPane.add(newRentalButton);
 		
 		dayTextField = new JTextField();
-		dayTextField.setBounds(224, 370, 33, 20);
+		dayTextField.setBounds(226, 381, 33, 20);
 		contentPane.add(dayTextField);
 		dayTextField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("/");
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_1.setBounds(328, 371, 8, 20);
+		label_1.setBounds(330, 382, 8, 20);
 		contentPane.add(label_1);
 		
 		monthTextField = new JTextField();
 		monthTextField.setColumns(10);
-		monthTextField.setBounds(285, 371, 33, 20);
+		monthTextField.setBounds(287, 382, 33, 20);
 		contentPane.add(monthTextField);
 		
 		yearTextField = new JTextField();
 		yearTextField.setColumns(10);
-		yearTextField.setBounds(347, 371, 33, 20);
+		yearTextField.setBounds(349, 382, 33, 20);
 		contentPane.add(yearTextField);
 		
 		JLabel label_2 = new JLabel("/");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_2.setBounds(267, 371, 8, 20);
+		label_2.setBounds(269, 382, 8, 20);
 		contentPane.add(label_2);
 		
 		JButton calcAmountButton = new JButton("\u039A\u03CC\u03C3\u03C4\u03BF\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2");
@@ -358,17 +358,17 @@ public class MainFrame extends JFrame {
 		
 		JLabel label_3 = new JLabel("  \u0397");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_3.setBounds(224, 393, 33, 20);
+		label_3.setBounds(226, 404, 33, 20);
 		contentPane.add(label_3);
 		
 		JLabel label_4 = new JLabel("  \u039C");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_4.setBounds(285, 394, 33, 20);
+		label_4.setBounds(287, 405, 33, 20);
 		contentPane.add(label_4);
 		
 		JLabel label_5 = new JLabel("  \u03A7");
 		label_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		label_5.setBounds(347, 394, 33, 20);
+		label_5.setBounds(349, 405, 33, 20);
 		contentPane.add(label_5);
 		
 		JLabel label_6 = new JLabel("     \u03A4\u0391\u0399\u039D\u0399\u0395\u03A3");
@@ -381,13 +381,18 @@ public class MainFrame extends JFrame {
 		label_7.setBounds(372, 22, 110, 20);
 		contentPane.add(label_7);
 		
+		JLabel label_8 = new JLabel("\u0395\u03B9\u03C3\u03B1\u03C3\u03C9\u03B3\u03AE \u0397\u03BC/\u03BD\u03AF\u03B1\u03C2 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7\u03C2/\u0395\u03C0\u03B9\u03C3\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2 \u03C4\u03B7\u03C2 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		label_8.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_8.setBounds(155, 358, 296, 20);
+		contentPane.add(label_8);
+		
 		
 		
 		
 		
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 619, 462);
+		setBounds(100, 100, 619, 475);
 	}
 
 	/**

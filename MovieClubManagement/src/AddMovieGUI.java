@@ -45,6 +45,7 @@ public class AddMovieGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AddMovieGUI(ArrayList<Movie> movies) {
+		setTitle("\u03A6\u03CC\u03C1\u03BC\u03B1 \u039A\u03B1\u03C4\u03B1\u03C7\u03CE\u03C1\u03B7\u03C3\u03B7\u03C2 \u039D\u03AD\u03B1\u03C2 \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
 
 		this.setVisible(true);
 		contentPane = new JPanel();
