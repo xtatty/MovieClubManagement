@@ -122,7 +122,7 @@ public class MovieDemo1_1 {
 				Rental rent2 = new Rental(mov2, rentDate2);
 				rent2.setReturnDate(returnDay2);
 				
-				Rental rent3 = new Rental(mov1, rentDate1);
+/*				Rental rent3 = new Rental(mov1, rentDate1);
 				rent3.setReturnDate(returnDay1);
 				Rental rent4 = new Rental(mov2, rentDate2);
 				rent2.setReturnDate(returnDay2);
@@ -139,7 +139,7 @@ public class MovieDemo1_1 {
 				
 				
 				Rental rent9 = new Rental(mov3, rentDate3);
-				rent9.setReturnDate(returnDay3);
+				rent9.setReturnDate(returnDay3);*/
 				
 				// Creating Vector for customer rentals
 				Vector<Rental> rentalsCust1 = new Vector<Rental>();
@@ -149,13 +149,13 @@ public class MovieDemo1_1 {
 				//Adding rentals to vectors
 				rentalsCust1.addElement(rent1);
 				rentalsCust1.addElement(rent2);
-				rentalsCust1.addElement(rent3);
+/*				rentalsCust1.addElement(rent3);
 				
 				rentalsCust1.addElement(rent4);
 				rentalsCust1.addElement(rent5);
 				rentalsCust1.addElement(rent6);
 				rentalsCust1.addElement(rent7);
-				rentalsCust1.addElement(rent8);
+				rentalsCust1.addElement(rent8);*/
 				
 		//		rentalsCust1.removeElement(rent3);
 				

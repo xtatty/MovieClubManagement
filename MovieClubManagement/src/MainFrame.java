@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Enumeration;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -15,8 +17,14 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+
+import javax.swing.JTextField;
+
+import java.awt.Font;
 
 public class MainFrame extends JFrame {
 	private JPanel contentPane;
@@ -26,6 +34,9 @@ public class MainFrame extends JFrame {
 	private DefaultListModel modelForCustomers;
 	JScrollPane scrollpane;
 	JScrollPane scrollpane1;
+	private JTextField dayTextField;
+	private JTextField monthTextField;
+	private JTextField yearTextField;
 	
 	public static void main(String[] args) {
 		System.out.println("Execution Starts:");
@@ -73,6 +84,7 @@ public class MainFrame extends JFrame {
 		allCustomers = customers;
 		setTitle("Movie Club Management");
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.GRAY);
 		
 		modelForMovies = new DefaultListModel();
 		for (Movie aMovie: allMovies)
@@ -124,7 +136,7 @@ public class MainFrame extends JFrame {
 
 
 		});
-		btnDelete.setBounds(120, 151, 130, 23);
+		btnDelete.setBounds(109, 151, 148, 23);
 		
 		
 		contentPane.setLayout(null);
@@ -167,20 +179,20 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
-		btnDelCustomer.setBounds(362, 151, 130, 23);
+		btnDelCustomer.setBounds(353, 151, 156, 23);
 		contentPane.add(btnDelCustomer);
 		contentPane.add(scrollPane_1);
 		
-		JButton button = new JButton("Ενοικιάσεις");
-		button.addMouseListener(new MouseAdapter() {
+		JButton rentalsButton = new JButton("Ενοικιάσεις");
+		rentalsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String id = (String) customerList.getSelectedValue();
 				new custRentals(customers, id);
 			}
 		});
-		button.setBounds(362, 222, 130, 23);
-		contentPane.add(button);
+		rentalsButton.setBounds(44, 270, 156, 23);
+		contentPane.add(rentalsButton);
 		
 		JButton btnNewButton = new JButton("\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03A0\u03B5\u03BB\u03AC\u03C4\u03B7");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -188,7 +200,7 @@ public class MainFrame extends JFrame {
 				new AddCustomerGUI(allCustomers);
 			}
 		});
-		btnNewButton.setBounds(362, 185, 130, 23);
+		btnNewButton.setBounds(353, 185, 156, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton button_1 = new JButton("\u0391\u03BD\u03B1\u03BD\u03AD\u03C9\u03C3\u03B7");
@@ -203,13 +215,138 @@ public class MainFrame extends JFrame {
 		button_1.setBounds(255, 75, 107, 23);
 		contentPane.add(button_1);
 		
+		JButton btnWriteMovie = new JButton("\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u03A4\u03B1\u03B9\u03BD\u03AF\u03B1\u03C2");
+		btnWriteMovie.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new AddMovieGUI(allMovies);
+				
+			}
+		});
+		btnWriteMovie.setBounds(109, 185, 148, 23);
+		contentPane.add(btnWriteMovie);
+		
+		JButton newRentalButton = new JButton("\u039D\u03AD\u03B1 \u0395\u03BD\u03BF\u03B9\u03BA\u03AF\u03B1\u03C3\u03B7");
+		newRentalButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Movie foundMovie = null;
+				Customer foundCustomer = null;
+				String custListName = (String) customerList.getSelectedValue();
+
+				for (Customer theCustomer: allCustomers)
+				{
+					String customerName = theCustomer.lastName + " " + theCustomer.firstName;
+					if ( customerName.equals(custListName))
+					{
+						foundCustomer = theCustomer;					
+						break;
+					}
+				}
+				
+				String movieName = (String) movieList.getSelectedValue();
+				
+				for (Movie theMovie: allMovies)
+				{
+					String movieTitle = theMovie.getMovieTitle();
+					if ( movieTitle.equals(movieName))
+					{
+						foundMovie = theMovie;
+						break;
+					}
+				}
+				
+				int day = Integer.parseInt(dayTextField.getText());	
+				int month = Integer.parseInt(monthTextField.getText());	
+				int year = Integer.parseInt(yearTextField.getText());
+				
+				Date rentalDate = new Date(year, month, day);
+				
+				Rental newRental = new Rental(foundMovie, rentalDate);
+				foundCustomer.addRental(newRental);
+				DBReadWrite.dbWriteCust(customers);
+				DBReadWrite.dbReadCust();
+			
+			
+			}
+		});
+		newRentalButton.setBounds(224, 270, 156, 23);
+		contentPane.add(newRentalButton);
+		
+		dayTextField = new JTextField();
+		dayTextField.setBounds(224, 337, 33, 20);
+		contentPane.add(dayTextField);
+		dayTextField.setColumns(10);
+		
+		JLabel label_1 = new JLabel("/");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_1.setBounds(328, 338, 8, 20);
+		contentPane.add(label_1);
+		
+		monthTextField = new JTextField();
+		monthTextField.setColumns(10);
+		monthTextField.setBounds(285, 338, 33, 20);
+		contentPane.add(monthTextField);
+		
+		yearTextField = new JTextField();
+		yearTextField.setColumns(10);
+		yearTextField.setBounds(347, 338, 33, 20);
+		contentPane.add(yearTextField);
+		
+		JLabel label_2 = new JLabel("/");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_2.setBounds(267, 338, 8, 20);
+		contentPane.add(label_2);
+		
+		JButton calcAmountButton = new JButton("\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03BC\u03CC\u03C2 \u039A\u03CC\u03C3\u03C4\u03BF\u03C5\u03C2");
+		calcAmountButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				Customer foundCustomer = null;
+				String custListName = (String) customerList.getSelectedValue();
+
+				for (Customer theCustomer: allCustomers)
+				{
+					String customerName = theCustomer.lastName + " " + theCustomer.firstName;
+					if ( customerName.equals(custListName))
+					{
+						foundCustomer = theCustomer;					
+						break;
+					}
+				}
+				
+				
+				
+				int day = Integer.parseInt(dayTextField.getText());	
+				int month = Integer.parseInt(monthTextField.getText());	
+				int year = Integer.parseInt(yearTextField.getText());
+				
+				Date returnDate = new Date(year, month, day);
+				
+							
+				Enumeration<Rental> Rentals = foundCustomer.rentals.elements();
+	    		String result = "";
+	    		while(Rentals.hasMoreElements()) {
+	    			Rental each = (Rental) Rentals.nextElement();
+	    			result += "\t" + each.getMovie().getMovieTitle() + "\t" +
+	    			"Μέρες ενοικίασης: "+ 
+	    			each.calcRentalDays(each.getRentalDate(), each.getReturnDate()) + "\t"+
+	    			"Κόστος ενοικίασης: " + each.getRentAmount() + "\n" ;
+	
+			}
+	    		
+	    		new ShowAmountGUI(result);
+			}
+			});
+		calcAmountButton.setBounds(405, 270, 156, 23);
+		contentPane.add(calcAmountButton);
+		
 		
 		
 		
 		
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 593, 294);
+		setBounds(100, 100, 619, 430);
 	}
 
 	/**
